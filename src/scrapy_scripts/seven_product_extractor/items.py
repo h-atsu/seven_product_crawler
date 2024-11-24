@@ -15,6 +15,7 @@ class SevenProductItem(Item):
     protein = Field()  # たんぱく質
     salt = Field()  # 食塩相当量
     sugar = Field()  # 糖質
+    is_seven_premium = Field()  # セブンプレミアムかどうか
     category = Field()  # 大カテゴリ
     small_category = Field()  # 小カテゴリ
     url = Field()  # 商品URL
