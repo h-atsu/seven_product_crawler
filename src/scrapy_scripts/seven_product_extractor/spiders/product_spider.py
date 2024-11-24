@@ -64,6 +64,7 @@ class SevenElevenSpider(scrapy.Spider):
             )
 
     def parse_product_list(self, response, is_seven_premium, category):
+        # TODO: 販売地域の取得
         # 商品リンクの取得
         product_links = response.css(
             "a[href*='/products/a/item/']:has(img)::attr(href)"

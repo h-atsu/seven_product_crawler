@@ -33,6 +33,10 @@ df.group_by("is_seven_premium").agg(pl.count())
 # %%
 df["name"].value_counts().sort("count", descending=True)  # 商品名に重複あり
 # %%
+df = df.unique(
+    subset=["name"]
+)  # 販売地域ごとに商品があり重複があるが地域差は一旦潰す TODO: 地域情報も取得
+# %%
 df["name"].value_counts().sort("count", descending=True)
 # %%
 df.write_csv(ROOT / "data" / "processed" / "products.csv")
